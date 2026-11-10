@@ -1,0 +1,14 @@
+{
+  "required" : [ "LeadNumber" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "LeadNumber" : {
+      "title" : "LeadNumber",
+      "description" : "The Lead Number the user wants to fetch details for. Must come from the user, never guessed.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

@@ -1,0 +1,28 @@
+{
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "CreatedNewLead" : {
+      "title" : "CreatedNewLead",
+      "description" : "show as an output",
+      "lightning:type" : "lightning__recordInfoType",
+      "lightning:sObjectInfo" : {
+        "apiName" : "Lead"
+      },
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : true,
+      "copilotAction:isUsedByPlanner" : true
+    },
+    "leadDetails" : {
+      "title" : "leadDetails",
+      "description" : "ok",
+      "lightning:type" : "lightning__recordInfoType",
+      "lightning:sObjectInfo" : {
+        "apiName" : "Lead"
+      },
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : false,
+      "copilotAction:isUsedByPlanner" : true
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

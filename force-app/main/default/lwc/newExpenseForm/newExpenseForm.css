@@ -1,0 +1,338 @@
+/* =============================================
+   Expense Claim — LWC Styles (Fully Adaptive)
+   ============================================= */
+
+/* ---------- Card Shell ---------- */
+.expense-card {
+    background: #ffffff;
+    border-radius: 0;           /* no rounding — goes edge to edge */
+    box-shadow: none;           /* no outer shadow when full width */
+    overflow: hidden;
+    font-family: 'Salesforce Sans', Arial, sans-serif;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+}
+
+/* ---------- Header ---------- */
+.card-header {
+    background: linear-gradient(135deg, #0176d3 0%, #014486 100%);
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #fff;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.header-icon {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.card-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 0 0 0.15rem 0;
+    letter-spacing: -0.2px;
+}
+
+.card-subtitle {
+    font-size: 0.8rem;
+    margin: 0;
+    opacity: 0.8;
+    font-weight: 400;
+}
+
+/* ---------- Body ---------- */
+.card-body {
+    padding: 1rem;
+    background: #f4f6f9;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* ---------- Sections ---------- */
+.section-block {
+    background: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    margin-bottom: 0.85rem;
+    padding-bottom: 0.65rem;
+    border-bottom: 2px solid #e8f0fe;
+}
+
+.section-icon {
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.section-title {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #0176d3;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+}
+
+/* ---------- Toggle Grid ---------- */
+.toggle-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem;
+    width: 100%;
+}
+
+@media (min-width: 480px) {
+    .toggle-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 768px) {
+    .toggle-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .toggle-grid {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+.toggle-card {
+    background: #f4f6f9;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 0.7rem 0.75rem;
+    transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+.toggle-card:hover {
+    border-color: #0176d3;
+    background: #eef5ff;
+    box-shadow: 0 2px 8px rgba(1, 118, 211, 0.12);
+}
+
+/* ---------- Expense Group ---------- */
+.expense-group {
+    border: 1.5px solid #dde4ef;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+   overflow: visible;  
+    background: #fff;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.group-header {
+    background: linear-gradient(90deg, #0176d3 0%, #0a8cda 100%);
+    padding: 0.55rem 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.group-badge {
+    background: rgba(255, 255, 255, 0.22);
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    padding: 0.18rem 0.55rem;
+    border-radius: 20px;
+}
+
+.group-label {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.78rem;
+    font-weight: 500;
+}
+
+/* ---------- Expense Rows ---------- */
+.expense-row {
+    padding: 0.75rem 0.75rem 0.4rem;
+    border-bottom: 1px dashed #e2e8f0;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: visible;          /* ← add this */
+    position: relative;         /* ← add this */
+    z-index: 1;                 /* ← add this */
+}
+
+.expense-row:last-of-type {
+    border-bottom: none;
+}
+
+/* ---------- File Upload ---------- */
+.file-upload-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    width: 100%;
+}
+
+.file-upload-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #3e3e3c;
+    display: block;
+}
+
+.file-upload-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    border: 1.5px dashed #b0bec5;
+    border-radius: 8px;
+    padding: 0.5rem 0.75rem;
+    background: #f7f9fc;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background 0.2s ease;
+    min-height: 40px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.file-upload-box:hover {
+    border-color: #0176d3;
+    background: #eef5ff;
+}
+
+.file-upload-icon {
+    font-size: 0.95rem;
+    flex-shrink: 0;
+}
+
+.file-upload-hint {
+    font-size: 0.78rem;
+    color: #5e6e82;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.file-input-hidden {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+}
+
+.file-ready-badge {
+    font-size: 0.72rem;
+    color: #2e844a;
+    background: #ebf5ee;
+    border-radius: 6px;
+    padding: 0.2rem 0.5rem;
+    font-weight: 600;
+    display: inline-block;
+    word-break: break-all;
+}
+
+/* ---------- Delete Button ---------- */
+.delete-btn-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+    padding-top: 0.5rem;
+}
+
+/* ---------- Add Row Footer ---------- */
+.add-row-footer {
+    padding: 0.55rem 0.75rem 0.65rem;
+    background: #f4f8ff;
+    border-top: 1px solid #e2eaf8;
+}
+
+/* ---------- Submit Section ---------- */
+.submit-section {
+    display: flex;
+    justify-content: center;
+    padding: 0.75rem 0 0.25rem;
+}
+
+/* ---------- Spinner ---------- */
+.spinner-overlay {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    padding: 0.5rem;
+}
+
+/* ---------- Eligibility / Limits ---------- */
+.eligibility-error {
+    background: #fef1ee;
+    border: 1px solid #ea001e;
+    color: #ba0517;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.limit-banner {
+    background: #eef5ff;
+    color: #014486;
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 0.45rem 0.9rem;
+    border-bottom: 1px solid #d8e6f8;
+}
+
+.limit-hint {
+    margin-top: 0.35rem;
+    font-size: 0.72rem;
+    color: #0176d3;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+/* ---------- Tablet & Desktop ---------- */
+@media (min-width: 768px) {
+    .card-header {
+        padding: 1.75rem 2rem;
+    }
+
+    .card-title {
+        font-size: 1.5rem;
+    }
+
+    .card-subtitle {
+        font-size: 0.85rem;
+    }
+
+    .card-body {
+        padding: 1.5rem 2rem;
+    }
+
+    .section-block {
+        padding: 1.25rem 1.5rem 1rem;
+    }
+}

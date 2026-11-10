@@ -1,0 +1,84 @@
+<template>
+    <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading" class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container">
+
+            <header class="slds-modal__header">
+                <lightning-button-icon
+                    class="slds-modal__close"
+                    icon-name="utility:close"
+                    alternative-text="Close"
+                    title="Close"
+                    disabled={isLoading}
+                    onclick={handleClose}>
+                </lightning-button-icon>
+                <h2 id="modal-heading" class="slds-text-heading_medium">Replace Purchase Order</h2>
+            </header>
+
+            <div class="slds-modal__content slds-p-around_medium">
+
+                <p class="replace-intro">
+                    Upload the replacement file. The existing record will be updated with the newly extracted values.
+                </p>
+
+                <template if:false={hasStagedFile}>
+                    <div class="upload-zone">
+                        <div class="upload-icon">
+                            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 16V4M12 4l-4 4M12 4l4 4" />
+                                <path d="M4 16v3a2 2 0 002 2h12a2 2 0 002-2v-3" />
+                            </svg>
+                        </div>
+                        <p class="upload-label">Drop replacement file here, or</p>
+                        <lightning-file-upload
+                            label=""
+                            name="replacementFile"
+                            record-id={recordId}
+                            accept={acceptedFormats}
+                            onuploadfinished={handleUploadFinished}>
+                        </lightning-file-upload>
+                        <p class="upload-hint">PDF, JPG or PNG</p>
+                    </div>
+                </template>
+
+                <template if:true={hasStagedFile}>
+                    <div class="staged-list">
+                        <p class="staged-heading">Ready to process</p>
+                        <div class="staged-row">
+                            <svg class="staged-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M6 2h9l5 5v15H6z" />
+                                <path d="M15 2v5h5" />
+                            </svg>
+                            <span class="staged-name">{stagedFile.name}</span>
+                            <button class="staged-remove" onclick={handleRemoveFile} disabled={isLoading} title="Remove">×</button>
+                        </div>
+                    </div>
+                </template>
+
+                <button class="process-btn" onclick={handleProcessFile} disabled={isProcessDisabled}>
+                    <template if:false={isLoading}>
+                        <span>Process File</span>
+                    </template>
+                    <template if:true={isLoading}>
+                        <span class="btn-spinner"></span>
+                        <span>Processing…</span>
+                    </template>
+                </button>
+
+                <template if:true={isLoading}>
+                    <div class="loading-track">
+                        <p class="loading-text">{loadingMessage}</p>
+                        <div class="loading-bar">
+                            <div class="loading-bar-fill"></div>
+                        </div>
+                    </div>
+                </template>
+
+            </div>
+
+            <footer class="slds-modal__footer">
+                <lightning-button label="Close" disabled={isLoading} onclick={handleClose}></lightning-button>
+            </footer>
+        </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+</template>

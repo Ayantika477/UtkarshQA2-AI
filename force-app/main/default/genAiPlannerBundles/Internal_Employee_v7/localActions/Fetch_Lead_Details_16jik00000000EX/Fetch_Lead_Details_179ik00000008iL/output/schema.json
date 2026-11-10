@@ -1,0 +1,17 @@
+{
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "leadDetails" : {
+      "title" : "leadDetails",
+      "description" : "Nested object. Use leadDetails.data.Lead_Number__c, leadDetails.data.Name, leadDetails.data.Phone, leadDetails.data.LeadSource, leadDetails.data.Department_Name__c, and leadDetails.id (or leadDetails.data.Id) for the record link. Ignore all other fields on leadDetails.data even though they exist.",
+      "lightning:type" : "lightning__recordInfoType",
+      "lightning:sObjectInfo" : {
+        "apiName" : "Lead"
+      },
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : false,
+      "copilotAction:isUsedByPlanner" : true
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

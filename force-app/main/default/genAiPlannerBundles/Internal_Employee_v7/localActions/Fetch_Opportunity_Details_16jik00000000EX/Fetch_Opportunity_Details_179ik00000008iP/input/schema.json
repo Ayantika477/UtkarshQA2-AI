@@ -1,0 +1,14 @@
+{
+  "required" : [ "OpportunityName" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "OpportunityName" : {
+      "title" : "OpportunityName",
+      "description" : "The Opportunity Name (or search term) the user wants to look up. Must come from the user, never guessed.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

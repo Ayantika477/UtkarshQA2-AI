@@ -1,0 +1,18 @@
+{
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "opportunityDetails" : {
+      "title" : "opportunityDetails",
+      "description" : "A LIST of matching Opportunity records. Each item exposes Name, StageName, Amount, CloseDate, Account.Name, Owner.Name and Id. Ignore all other fields even though they exist.",
+      "maxItems" : 2000,
+      "items" : {
+        "lightning:type" : "lightning__recordInfoType"
+      },
+      "lightning:type" : "lightning__listType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : false,
+      "copilotAction:isUsedByPlanner" : true
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

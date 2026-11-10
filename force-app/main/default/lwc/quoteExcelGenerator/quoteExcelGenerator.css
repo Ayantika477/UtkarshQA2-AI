@@ -1,0 +1,58 @@
+/* Creates a clean, centered box with a soft shadow */
+.main-container {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    background-color: white;
+}
+
+/* Gives enough bottom space so the dropdown doesn't get cut off or become transparent */
+.form-body {
+    min-height: 120px; 
+}
+/* Card Base Styling */
+.format-card {
+    cursor: pointer;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    transition: all 0.2s ease-in-out;
+    background-color: #ffffff;
+    padding: 16px 8px; /* Gives it the nice square shape */
+}
+
+/* Hover Effect */
+.format-card:hover {
+    border-color: #0176d3;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Selected State */
+.format-card.selected-card {
+    border-color: #0176d3;
+    background-color: #f3f9fd; /* Very light blue tint */
+}
+
+/* Label Styling */
+.format-label {
+    font-weight: 600;
+    color: #444444;
+    font-size: 13px;
+}
+
+/* Make label blue when selected */
+.selected-card .format-label {
+    color: #0176d3;
+}
+/* Disabled State */
+.format-card.disabled-card {
+    background-color: #f9f9fa;
+    border-color: #f3f3f3;
+    cursor: not-allowed;
+    opacity: 0.4; /* Fades out the icon and text */
+}
+
+/* Remove hover effects for disabled cards */
+.format-card.disabled-card:hover {
+    border-color: #f3f3f3;
+    box-shadow: none;
+}
